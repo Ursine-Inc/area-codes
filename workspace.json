@@ -1,0 +1,124 @@
+{
+  "version": 2,
+  "projects": {
+    "source": {
+      "root": "apps/source",
+      "sourceRoot": "apps/source/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nx/js:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/source",
+            "tsConfig": "apps/source/tsconfig.lib.json",
+            "project": "apps/source/package.json"
+          }
+        },
+        "test": {
+          "executor": "@nx/jest:jest",
+          "options": {
+            "jestConfig": "apps/source/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nx/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/source/**/*.ts", "apps/source/**/*.tsx"]
+          }
+        }
+      }
+    },
+    "mobile": {
+      "root": "apps/mobile",
+      "sourceRoot": "apps/mobile/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nx/js:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/mobile",
+            "tsConfig": "apps/mobile/tsconfig.lib.json",
+            "project": "apps/mobile/package.json"
+          }
+        },
+        "test": {
+          "executor": "@nx/jest:jest",
+          "options": {
+            "jestConfig": "apps/mobile/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nx/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/source/**/*.ts", "apps/source/**/*.tsx"]
+          }
+        },
+        "start": {
+          "executor": "@nx/expo:start",
+          "options": {
+            "port": 19000
+          }
+        }
+      }
+    },
+    "web": {
+      "root": "apps/web",
+      "sourceRoot": "apps/web/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nx/js:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/web",
+            "tsConfig": "apps/web/tsconfig.lib.json",
+            "project": "apps/web/package.json"
+          }
+        },
+        "test": {
+          "executor": "@nx/jest:jest",
+          "options": {
+            "jestConfig": "apps/web/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nx/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/source/**/*.ts", "apps/source/**/*.tsx"]
+          }
+        }
+      }
+    }
+  },
+  "mobile-e2e": {
+    "root": "apps/mobile-e2e",
+    "sourceRoot": "apps/mobile-e2e/src",
+    "projectType": "application",
+    "targets": {
+      "e2e": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "detox test --configuration ios.sim.debug"
+        }
+      }
+    }
+  },
+  "web-e2e": {
+    "root": "apps/web-e2e",
+    "sourceRoot": "apps/web-e2e/src",
+    "projectType": "application",
+    "targets": {
+      "e2e": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "cypress open"
+        }
+      }
+    }
+  }
+}
