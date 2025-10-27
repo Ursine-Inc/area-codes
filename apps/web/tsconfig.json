@@ -1,18 +1,29 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
+    "allowJs": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "lib": ["dom", "dom.iterable", "es6"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
     "types": ["vite/client"]
   },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    }
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "../../lib/shared-ui/src/**/*"
   ],
-  "extends": "../../tsconfig.base.json"
+  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.spec.tsx"]
 }
