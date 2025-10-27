@@ -7,7 +7,10 @@
       "path": "./apps/mobile"
     },
     {
-      "path": "./apps"
+      "path": "./apps/web"
+    },
+    {
+      "path": "./lib/shared-ui"
     }
   ]
 }
