@@ -1,0 +1,32 @@
+{
+  "name": "shared-ui",
+  "root": "lib/shared-ui",
+  "sourceRoot": "lib/shared-ui/src",
+  "projectType": "library",
+  "tags": ["scope:shared"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/lib/shared-ui",
+        "tsConfig": "lib/shared-ui/tsconfig.lib.json",
+        "packageJson": "lib/shared-ui/package.json",
+        "main": "lib/shared-ui/src/index.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["lib/shared-ui/**/*.ts", "lib/shared-ui/**/*.tsx"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "lib/shared-ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
