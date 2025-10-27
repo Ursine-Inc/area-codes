@@ -1,28 +1,26 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "types": ["node"],
-    "rootDir": "src",
+    "rootDir": "./src",
+    "outDir": "../../dist/out-tsc",
     "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "bundler",
-    "noUnusedLocals": false,
-    "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo"
+    "types": ["node"],
+    "allowJs": true,
+    "noEmit": true
   },
-  "files": ["../../node_modules/@nx/expo/typings/svg.d.ts"],
+  "include": ["src"],
   "exclude": [
-    "out-tsc",
+    "node_modules",
     "dist",
-    "**/*.test.ts",
     "**/*.spec.ts",
-    "**/*.test.tsx",
     "**/*.spec.tsx",
-    "**/*.test.js",
+    "**/*.test.ts",
+    "**/*.test.tsx",
     "**/*.spec.js",
-    "**/*.test.jsx",
     "**/*.spec.jsx",
-    "src/test-setup.ts"
-  ],
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+    "**/*.test.js",
+    "**/*.test.jsx"
+  ]
 }

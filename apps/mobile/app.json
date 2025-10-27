@@ -1,7 +1,9 @@
 {
   "expo": {
-    "name": "Mobile",
-    "slug": "@area-codes/mobile",
+    "newArchEnabled": true,
+    "name": "Area Codes Mobile App",
+    "slug": "area-codes-mobile",
+    "owner": "ursineenterprises",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,10 +15,15 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ursineenterprises.areacodes"
+      "bundleIdentifier": "com.ursineenterprises.areacodes",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.ursineenterprises.areacodes",
@@ -29,6 +36,11 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": []
+    "plugins": [],
+    "extra": {
+      "eas": {
+        "projectId": "a16ee4bb-19bd-4e5a-bb16-b8bc06eb31c9"
+      }
+    }
   }
 }
