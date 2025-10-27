@@ -5,6 +5,7 @@
   },
   "build": {
     "production": {
+      "node": "20.19.5",
       "android": {
         "buildType": "app-bundle"
       },
@@ -14,6 +15,7 @@
     },
     "preview": {
       "distribution": "internal",
+      "node": "20.19.5",
       "ios": {
         "simulator": true,
         "buildConfiguration": "Release"
@@ -26,6 +28,7 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
+      "node": "20.19.5",
       "ios": {
         "simulator": true
       },
